@@ -2,9 +2,11 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import axios, { AxiosError } from 'axios'
 import { Node, ApiResponse } from '@/lib/types'
 
-const api = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000',
-})
+// Use an absolute API host when provided (production), otherwise use relative
+// URLs so the browser will call the same origin the app is served from.
+const api = process.env.NEXT_PUBLIC_API_URL
+  ? axios.create({ baseURL: process.env.NEXT_PUBLIC_API_URL })
+  : axios.create()
 
 export function setAuthToken(token: string | null) {
   if (token) {
