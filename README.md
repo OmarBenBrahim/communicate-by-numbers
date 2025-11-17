@@ -2,6 +2,9 @@
 
 A full-stack Next.js application for communicating via calculation trees. Users can create discussion chains by starting with a number and adding mathematical operations, similar to nested comments in social media.
 
+## Live Demo
+https://communicate-by-numbers.onrender.com/
+
 ## Tech Stack
 
 - **Frontend & Backend:** Next.js 14 (TypeScript)
